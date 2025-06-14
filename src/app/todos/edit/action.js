@@ -1,5 +1,8 @@
 "use server"
 
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
 export default async function updateTodoAction( formData) {
     const _id = formData.get("_id")
     const title = formData.get("title")
@@ -13,4 +16,7 @@ export default async function updateTodoAction( formData) {
           },
           body: JSON.stringify({"_id":"","title":"","content":""})
     })
+
+    revalidatePath("/")
+    redirect("/")
 }

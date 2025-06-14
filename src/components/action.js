@@ -16,7 +16,7 @@ export async function createTodoAction(_, formData) {
 
   try {
     // take time
-    await fetch("https://v1.appbackend.io/v1/rows/QfCptJEpHB3X", {
+    await fetch("https://v1.appbackend.io/v1/rows/UjDUaHABTSbi", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export async function createTodoAction(_, formData) {
   }
 }
 
-export async function deleteTodoAction(formData) {
+export async function deleteTodoAction(_, formData) {
   const todoId = formData.get("id");
 
   if (!todoId) {
@@ -48,7 +48,7 @@ export async function deleteTodoAction(formData) {
   }
 
   try {
-    await fetch("https://v1.appbackend.io/v1/rows/QfCptJEpHB3X", {
+    await fetch("https://v1.appbackend.io/v1/rows/UjDUaHABTSbi", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

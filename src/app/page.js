@@ -3,7 +3,7 @@ import Link from "next/link";
 
 async function getTodos() {
   try {
-    const res = await fetch("https://v1.appbackend.io/v1/rows/QfCptJEpHB3X", {
+    const res = await fetch("https://v1.appbackend.io/v1/rows/UjDUaHABTSbi", {
       cache: 'no-store' // untuk data yang sering berubah
     });
     

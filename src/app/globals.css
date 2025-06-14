@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @layer base {
   textarea,
   input {
@@ -9,5 +10,4 @@
   button {
     @apply disabled:opacity-40 p-2 rounded-lg w-full bg-black text-white
   }
-
 }
