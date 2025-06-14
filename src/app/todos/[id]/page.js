@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { DeleteBtn } from "@/components/form";
 
-async function getTodo(id) {
+async function getTodo(_id) {
   try {
-    const res = await fetch("https://v1.appbackend.io/v1/rows/QfCptJEpHB3X");
+    const res = await fetch("https://v1.appbackend.io/v1/rows/UjDUaHABTSbi");
     if (!res.ok) {
       throw new Error('Failed to fetch todo');
     }
     const data = await res.json();
-    return data.data.find(todo => todo._id === id);
+    return data.data.find(todo => todo._id === _id);
+
   } catch (error) {
     console.error('Error fetching todo:', error);
     return null;
@@ -16,7 +17,7 @@ async function getTodo(id) {
 }
 
 export default async function TodoDetailPage({ params }) {
-  const { id } = params;
+  const {id } = params;
   const todo = await getTodo(id);
 
   if (!todo) {
@@ -31,7 +32,6 @@ export default async function TodoDetailPage({ params }) {
       </main>
     );
   }
-
   return (
     <main className="max-w-3xl mx-auto my-12 px-4">
       <div className="mb-6">

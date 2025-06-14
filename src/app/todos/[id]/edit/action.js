@@ -3,8 +3,8 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-export default async function updateTodoAction( formData) {
-    const _id = formData.get("_id")
+export async function updateTodoAction(formData) {
+    const id = formData.get("id")
     const title = formData.get("title")
     const content = formData.get("content");
 
@@ -14,9 +14,10 @@ export default async function updateTodoAction( formData) {
           headers: {
                 'Content-Type': 'application/json'
           },
-          body: JSON.stringify({"_id":"","title":"","content":""})
+          body: JSON.stringify({ _id: id, title, content, image: " "})
     })
 
     revalidatePath("/")
+
     redirect("/")
 }
